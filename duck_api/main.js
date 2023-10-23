@@ -2,11 +2,11 @@ const express = require('express');
 var mysql = require('mysql');
 // var cors = require('cors');
 
-const PORT = 3000;
+const PORT = 80;
 
 
 var con = mysql.createConnection({
-    host: "10.60.91.50",
+    host: "localhost",
     user: "duck",
     password: "duck-it2"
 });
