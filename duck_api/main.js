@@ -44,6 +44,48 @@ app.get("/api/",function(req,res){
                 
         });
     }
+    else{
+        //fix sql injection
+        if (req.query.id.match(/^[0-9a-zA-Z]+$/)){
+
+            //select duck
+            con.query("SELECT * FROM duck_it.ducks WHERE id = '"+req.query.id+"'", function (err, result, fields) {
+                if (err) throw err;
+
+                //if duck exists
+                if (result.length==1){
+                    duckName=result[0].name
+                    owner_email=result[0].owner_email
+                    strength=result[0].strength
+                    perception=result[0].perception
+                    endurance=result[0].endurance
+                    charisma=result[0].charisma
+                    intelligence=result[0].intelligence
+                    agility=result[0].agility
+                    luck=result[0].luck
+
+                    res.send({
+                        "duckName":duckName,
+                        "owner_email":owner_email,
+                        "strength":strength,
+                        "perception":perception,
+                        "endurance":endurance,
+                        "charisma":charisma,
+                        "intelligence":intelligence,
+                        "agility":agility,
+                        "luck":luck
+                    });
+                }
+                else{
+                    res.status(404).send({"duckName":"ERR: DUCK_DOES_NOT_EXIST"})
+                }                
+            });
+        }
+        else{
+            res.status(404).send({"duckName":"ERR: MALFORMED_ID"})
+        }
+
+    }
 });
 
 
