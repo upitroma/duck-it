@@ -2,7 +2,7 @@ const express = require('express');
 var mysql = require('mysql');
 // var cors = require('cors');
 
-const PORT = 80;
+const PORT = 3000;
 
 
 var con = mysql.createConnection({
@@ -30,6 +30,21 @@ con.connect(function(err) {
 var app = express();
 // app.use(cors());
 
+
+app.get("/api/modify/",function(req,res){
+    if(!req.query.id || req.query.id=="null"){
+        res.send({"status":"ERR: no id provided"})
+        return
+    }
+
+    if(!req.query.id || req.query.id=="null"){
+        res.send({"status":"ERR: no id provided"})
+        return
+    }
+
+    
+});
+
 app.get("/api/",function(req,res){
     if(!req.query.id || req.query.id=="null"){
 
@@ -55,7 +70,7 @@ app.get("/api/",function(req,res){
                 //if duck exists
                 if (result.length==1){
                     duckName=result[0].name
-                    owner_email=result[0].owner_email
+                    ownerEmail=result[0].owner_email
                     strength=result[0].strength
                     perception=result[0].perception
                     endurance=result[0].endurance
@@ -66,7 +81,7 @@ app.get("/api/",function(req,res){
 
                     res.send({
                         "duckName":duckName,
-                        "owner_email":owner_email,
+                        "ownerEmail":ownerEmail,
                         "strength":strength,
                         "perception":perception,
                         "endurance":endurance,
@@ -87,6 +102,8 @@ app.get("/api/",function(req,res){
 
     }
 });
+
+
 
 
 var server = app.listen(PORT, function () {
