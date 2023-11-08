@@ -40,9 +40,26 @@ app.post('/api/modify/', (req, res) => {
         //if duck exists
         if (result.length==1){
             //make sure all fields are present and valid integers
-            if (Number.isInteger(data.strength) && Number.isInteger(data.perception) && Number.isInteger(data.endurance) && Number.isInteger(data.charisma) && Number.isInteger(data.intelligence) && Number.isInteger(data.agility) && Number.isInteger(data.luck)){
+            if (
+            data.ownerEmail &&
+            Number.isInteger(data.strength) && 
+            Number.isInteger(data.perception) && 
+            Number.isInteger(data.endurance) && 
+            Number.isInteger(data.charisma) && 
+            Number.isInteger(data.intelligence) && 
+            Number.isInteger(data.agility) && 
+            Number.isInteger(data.luck)){
                 //update duck
-                con.query("UPDATE duck_it.ducks SET strength = '"+data.strength+"', perception = '"+data.perception+"', endurance = '"+data.endurance+"', charisma = '"+data.charisma+"', intelligence = '"+data.intelligence+"', agility = '"+data.agility+"', luck = '"+data.luck+"' WHERE id = '"+data.id+"'", function (err, result, fields) {
+                con.query("UPDATE duck_it.ducks SET owner_email= '"+data.ownerEmail+
+                "', strength = '"+data.strength+
+                "', perception = '"+data.perception+
+                "', endurance = '"+data.endurance+
+                "', charisma = '"+data.charisma+
+                "', intelligence = '"+data.intelligence+
+                "', agility = '"+data.agility+
+                "', luck = '"+data.luck+
+                "' WHERE id = '"+data.id+"'", 
+                function (err, result, fields) {
                     if (err) throw err;
                     res.send('duck updated: ' + JSON.stringify(data));
                 });
