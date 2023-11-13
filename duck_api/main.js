@@ -41,7 +41,7 @@ app.post('/api/modify/', (req, res) => {
         if (result.length==1){
             //make sure all fields are present and valid integers
             if (
-            data.ownerEmail &&
+            data.ownerEmail!="" &&
             Number.isInteger(data.strength) && 
             Number.isInteger(data.perception) && 
             Number.isInteger(data.endurance) && 
@@ -103,6 +103,7 @@ app.get("/api/",function(req,res){
                     luck=result[0].luck
 
                     res.send({
+                        "id":req.query.id,
                         "duckName":duckName,
                         "ownerEmail":ownerEmail,
                         "strength":strength,
