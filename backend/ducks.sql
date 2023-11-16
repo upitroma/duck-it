@@ -10,6 +10,5 @@ CREATE TABLE ducks (
     intelligence INT  DEFAULT 1,
     agility INT  DEFAULT 1,
     luck INT  DEFAULT 1,
-    PRIMARY KEY (id),
-    FOREIGN KEY (owner_email) REFERENCES users (email)
+    PRIMARY KEY (id)
 );
