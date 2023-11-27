@@ -41,7 +41,6 @@ app.post('/api/modify/', (req, res) => {
         if (result.length==1){
             //make sure all fields are present and valid integers
             if (
-            data.ownerEmail!="" &&
             Number.isInteger(data.strength) && 
             Number.isInteger(data.perception) && 
             Number.isInteger(data.endurance) && 
@@ -50,7 +49,7 @@ app.post('/api/modify/', (req, res) => {
             Number.isInteger(data.agility) && 
             Number.isInteger(data.luck)){
                 //update duck
-                con.query("UPDATE duck_it.ducks SET owner_email= '"+data.ownerEmail+
+                con.query("UPDATE duck_it.ducks SET "+
                 "', strength = '"+data.strength+
                 "', perception = '"+data.perception+
                 "', endurance = '"+data.endurance+
@@ -93,7 +92,6 @@ app.get("/api/",function(req,res){
                 //if duck exists
                 if (result.length==1){
                     duckName=result[0].name
-                    ownerEmail=result[0].owner_email
                     strength=result[0].strength
                     perception=result[0].perception
                     endurance=result[0].endurance
@@ -105,7 +103,6 @@ app.get("/api/",function(req,res){
                     res.send({
                         "id":req.query.id,
                         "duckName":duckName,
-                        "ownerEmail":ownerEmail,
                         "strength":strength,
                         "perception":perception,
                         "endurance":endurance,

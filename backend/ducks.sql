@@ -2,7 +2,6 @@
 CREATE TABLE ducks (
     id varchar(200) NOT NULL UNIQUE,
     name varchar(200) NOT NULL UNIQUE,
-    owner_email varchar(200) DEFAULT NULL,
     strength INT  DEFAULT 1,
     perception INT  DEFAULT 1,
     endurance INT  DEFAULT 1,
