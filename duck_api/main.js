@@ -6,7 +6,7 @@ const PORT = 3000;
 
 
 var con = mysql.createConnection({
-    host: "10.60.91.50",
+    host: "172.17.0.1",
     user: "duck",
     password: "duck-it2"
 });
@@ -50,7 +50,7 @@ app.post('/api/modify/', (req, res) => {
             Number.isInteger(data.luck)){
                 //update duck
                 con.query("UPDATE duck_it.ducks SET "+
-                "', strength = '"+data.strength+
+                "strength = '"+data.strength+
                 "', perception = '"+data.perception+
                 "', endurance = '"+data.endurance+
                 "', charisma = '"+data.charisma+
