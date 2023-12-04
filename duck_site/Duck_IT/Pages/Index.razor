@@ -1,0 +1,101 @@
+﻿@page "/{id?}"
+
+<PageTitle>Duck Stats</PageTitle>
+
+@using Duck_IT.Data
+@using Duck_IT.Models
+@using MudBlazor
+@inject DuckService ForecastService
+
+<h1>Duck</h1>
+
+@if (duck == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <MudSimpleTable Style="overflow-x: auto;">
+        <tbody>
+            <tr>
+                <td>Name: </td>
+                <td>@duck.duckName</td>
+            </tr>
+            <tr>
+                <td>Strength: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.strength"></MudInput>
+                </td>
+            </tr>
+            <tr>
+                <td>Perception: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.perception"></MudInput>
+                </td>
+            </tr>
+            <tr>
+                <td>Endurance: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.endurance"></MudInput>
+                </td>
+            </tr>
+            <tr>
+                <td>Charisma: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.charisma"></MudInput>
+                </td>
+            </tr>
+            <tr>
+                <td>Intelligence: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.intelligence"></MudInput>
+                </td>
+            </tr>
+            <tr>
+                <td>Agility: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.agility"></MudInput>
+                </td>
+            </tr>
+            <tr>
+                <td>Luck: </td>
+                <td>
+                    <MudInput @bind-Value="@duck.luck"></MudInput>
+                </td>
+            </tr>
+
+        </tbody>
+    </MudSimpleTable>
+}
+
+@if (response != null)
+{
+    <p>
+        Response:
+        @response
+    </p>
+}
+
+<MudButton OnClick="()=>UpdateDuck()">
+    Update
+</MudButton>
+
+@code {
+    [Parameter]
+    public string? id { get; set; }
+
+    public string? response;
+
+    public Duck? duck;
+
+    protected override async Task OnInitializedAsync()
+    {
+        duck = await ForecastService.GetDuckAsync(id);
+    }
+
+    private async Task UpdateDuck()
+    {
+        if (duck != null)
+            response = await ForecastService.UpdateDuckAsync(duck);
+    }
+}
