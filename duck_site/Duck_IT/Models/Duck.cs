@@ -4,7 +4,6 @@
     {
         public string id = "";
         public string duckName = "";
-        public string ownerEmail = "";
         public int strength = 1;
         public int perception = 1;
         public int endurance = 1;
@@ -19,7 +18,6 @@
             {
                 { "id", id },
                 { "duckName", duckName },
-                { "ownerEmail", ownerEmail },
                 { "strength", strength.ToString() },
                 { "perception", perception.ToString()},
                 { "endurance", endurance.ToString() },

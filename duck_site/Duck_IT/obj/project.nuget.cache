@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L+8YWz2dL7T9BK5jZPxirnFaw6j9t0W6hySujVEY9ItdS6EO28EMO/J0wkvVHdYeuEcq6oQCcNKGA8ZrZVUu7g==",
+  "dgSpecHash": "JgLtLUhs/RnY6GRZp7/R3dydzRTtqMKFp5HByUK1XhU2aNJmfC/8Yib31GqCOcHf1+G8k8Nd40y0JD7OCpFiRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\turtl\\Documents\\GitHub\\Duck_IT\\Duck_IT\\Duck_IT.csproj",
+  "projectFilePath": "C:\\Users\\turtl\\Documents\\GitHub\\duck-it\\duck_site\\Duck_IT\\Duck_IT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\turtl\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\turtl\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\turtl\\Documents\\GitHub\\Duck_IT\\Duck_IT\\Duck_IT.csproj": {}
+    "C:\\Users\\turtl\\Documents\\GitHub\\duck-it\\duck_site\\Duck_IT\\Duck_IT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\turtl\\Documents\\GitHub\\Duck_IT\\Duck_IT\\Duck_IT.csproj": {
+    "C:\\Users\\turtl\\Documents\\GitHub\\duck-it\\duck_site\\Duck_IT\\Duck_IT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\turtl\\Documents\\GitHub\\Duck_IT\\Duck_IT\\Duck_IT.csproj",
+        "projectUniqueName": "C:\\Users\\turtl\\Documents\\GitHub\\duck-it\\duck_site\\Duck_IT\\Duck_IT.csproj",
         "projectName": "Duck_IT",
-        "projectPath": "C:\\Users\\turtl\\Documents\\GitHub\\Duck_IT\\Duck_IT\\Duck_IT.csproj",
+        "projectPath": "C:\\Users\\turtl\\Documents\\GitHub\\duck-it\\duck_site\\Duck_IT\\Duck_IT.csproj",
         "packagesPath": "C:\\Users\\turtl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\turtl\\Documents\\GitHub\\Duck_IT\\Duck_IT\\obj\\",
+        "outputPath": "C:\\Users\\turtl\\Documents\\GitHub\\duck-it\\duck_site\\Duck_IT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\turtl\\AppData\\Roaming\\NuGet\\NuGet.Config",
